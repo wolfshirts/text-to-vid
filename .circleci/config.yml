@@ -7,7 +7,7 @@ jobs:
     #   image: linux-cuda-12:default
     # resource_class: gpu.nvidia.medium
     docker: # executor type
-      - image: cimg/base:stable
+      - image: cimg/python:stable
     steps:
       - checkout
       - run: which pip
