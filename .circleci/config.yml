@@ -4,7 +4,7 @@ orbs:
 jobs:
   build:
     docker: 
-      - image: chainguard/pytorch-cuda12:sha256-d2d5cc8926157a38c8f684f8f5bbc8368d6f914d637488bee8d548134340c241.sig
+      - image: 2.3.1-cuda11.8-cudnn8-runtime
     steps:
       - run: python --version
       - run: pip install git+https://github.com/huggingface/diffusers transformers accelerate
