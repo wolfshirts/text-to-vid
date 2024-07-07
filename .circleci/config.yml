@@ -11,7 +11,7 @@ jobs:
     steps:
       - checkout
       - run: which pip
-      - run: $ pip install git+https://github.com/huggingface/diffusers transformers accelerate
+      - run: pip install git+https://github.com/huggingface/diffusers transformers accelerate
       - run: python vidmaker.py
       - store_artifacts:
           path: vid.mp4
