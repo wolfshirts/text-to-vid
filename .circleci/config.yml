@@ -5,7 +5,7 @@ jobs:
   build:
     executor: win/server-2019-cuda
     steps:
-      - run: Write-Host 'Hello, Windows'
+      - run: python --version
 workflows:
   my-workflow:
     jobs:
