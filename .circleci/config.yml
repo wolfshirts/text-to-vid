@@ -3,11 +3,10 @@ orbs:
   win: circleci/windows@5.0
 jobs:
   build:
-    executor: win/server-2019-cuda
+    docker: nvidia/cuda
     steps:
       - run: python --version
       - run: pip install git+https://github.com/huggingface/diffusers transformers accelerate
-
 
 workflows:
   my-workflow:
