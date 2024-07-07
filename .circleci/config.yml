@@ -1,23 +1,36 @@
-version: 2.1
-
-# Define the jobs we want to run for this project
+version: '2.1'
+orbs:
+  win: circleci/windows@5.0
 jobs:
   build:
-    # machine:
-    #   image: linux-cuda-12:default
-    # resource_class: gpu.nvidia.medium
-    docker: # executor type
-      - image: cimg/python:3.12.4
+    executor: win/server-2019-cuda
     steps:
-      - checkout
-      - run: which pip
-      - run: pip install git+https://github.com/huggingface/diffusers transformers accelerate
-      - run: python vidmaker.py
-      - store_artifacts:
-          path: vid.mp4
-          destination: vid.mp4
-# Orchestrate our job run sequence
+      - run: Write-Host 'Hello, Windows'
 workflows:
-  build_and_test:
+  my-workflow:
     jobs:
       - build
+
+# version: 2.1
+
+# # Define the jobs we want to run for this project
+# jobs:
+#   build:
+#     # machine:
+#     #   image: linux-cuda-12:default
+#     # resource_class: gpu.nvidia.medium
+#     docker: # executor type
+#       - image: cimg/python:3.12.4
+#     steps:
+#       - checkout
+#       - run: which pip
+#       - run: pip install git+https://github.com/huggingface/diffusers transformers accelerate
+#       - run: python vidmaker.py
+#       - store_artifacts:
+#           path: vid.mp4
+#           destination: vid.mp4
+# # Orchestrate our job run sequence
+# workflows:
+#   build_and_test:
+#     jobs:
+#       - build
