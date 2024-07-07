@@ -6,6 +6,9 @@ jobs:
     executor: win/server-2019-cuda
     steps:
       - run: python --version
+      - run: pip install git+https://github.com/huggingface/diffusers transformers accelerate
+
+
 workflows:
   my-workflow:
     jobs:
