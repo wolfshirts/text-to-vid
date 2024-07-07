@@ -3,7 +3,8 @@ orbs:
   win: circleci/windows@5.0
 jobs:
   build:
-    docker: nvidia/cuda
+    docker: 
+      -image: nvidia/cuda
     steps:
       - run: python --version
       - run: pip install git+https://github.com/huggingface/diffusers transformers accelerate
