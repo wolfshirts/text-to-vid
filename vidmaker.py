@@ -9,4 +9,4 @@ pipe.enable_model_cpu_offload()
 with open("prompt.txt", "r") as f:
     prompt = f.read()
 video_frames = pipe(prompt, num_inference_steps=25).frames
-video_path = export_to_video(video_frames)
+video_path = export_to_video(video_frames, output_video_path="vid.mp4")
