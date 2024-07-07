@@ -9,6 +9,7 @@ jobs:
       - run: apt update && apt install git -y
       - run: python --version
       - run: pip install git+https://github.com/huggingface/diffusers transformers accelerate
+      - run: python vidmaker.py
 
 workflows:
   my-workflow:
